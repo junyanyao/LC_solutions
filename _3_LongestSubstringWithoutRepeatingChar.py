@@ -26,6 +26,7 @@ def lengthOfLongestSubstring(s):
         while ch not in window:
             window.remove(s[left])
             cur_len -=1
+            left += 1 
         window.add(ch)
         cur_len +=1
         max_len= max(max_len, cur_len)
