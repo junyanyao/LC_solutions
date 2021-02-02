@@ -53,3 +53,19 @@ def lengthOfLongestSubstring(s):
             end +=1
             max_len = max(len(store), max_len)
     return max_len
+#single pointer
+
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        char = []
+        cur= 0
+        max_=0
+        for i in range(len(s)):
+            char.append(s[i])
+            cur +=1
+            if len(set(char)) != len(char):
+                char.pop(0)
+                cur -=1
+            max_= max(max_, cur)
+        return max_
+        
